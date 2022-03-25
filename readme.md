@@ -4,11 +4,11 @@
 
 ### Business Problem and Background
 
-**Problem Statement**
+**Problem Statement**<br/>
 The City of Chicago and the Chicago Department of Public Health (CDPH) are seeking an improved method to predict when, and where, West Nile virus outbreaks will occur in mosquitoes. A solution will enable resources to be allocated more efficiently and effectively in the effort to reduce the transmission of West Nile virus.
 
 
-**Background Information**
+**Background Information**<br/>
 West Nile virus is transmitted to humans via infected mosquitoes. In severe cases, individuals can develop potentially fatal neurological illnesses. After first observing human West Nile virus cases in 2002, the City of Chicago and the CDPH initiated a program in 2004 to monitor mosquito populations and reduce the transmission of West Nile virus. Mosquito traps were established at different locations throughout Chicago and monitored for the presence of West Nile virus. This information was used to determine the location and timing of mosquito spraying efforts. Making use of mosquito trap data, Chicago weather data, and mosquito spray data the City of Chicago and the CDPH would like to improve their ability to predict the presence of West Nile virus in mosquitoes. An improved method of prediction will allow for greater effectiveness, and a more efficient allocation of resources, in the efforts to reduce transmission of West Nile virus.
 
 References:
@@ -23,10 +23,10 @@ References:
 ***
 ### Modeling
 
-**Model Evaluation**
+**Model Evaluation**<br/>
 In order to perform model evaluation, the **AUC-ROC Curve (AUC)**. ROC is effective at assessing model performance for binary classification problems. The AUC assesses the model’s ability to differentiate between the positive and negative class. 
 
-**Modeling Options**
+**Modeling Options**<br/>
 The following **8 machine learning models** were selected, trained, and used to make predictions on the test data:
 * Logistic Regression
 * Support Vector Classifier
@@ -39,10 +39,10 @@ The following **8 machine learning models** were selected, trained, and used to 
 
 Additionally, a Dummy Classifier was used to establish a **baseline model**. The Dummy Classifier makes predictions by randomly drawing a class from a uniform distribution of the unique classes.
 
-**Model Selection**
+**Model Selection**<br/>
 After initial modeling using the default hyperparameters for each of the 8 models, the **Gradient Boosting Clasifier** had the best initial performance (AUC = 0.8389).  Threfore, it was selected as the starting point to build a final model.
 
-**HyperParameter Tuning**
+**HyperParameter Tuning**<br/>
 In an attempt to improve upon the Gradient Boosting Classifier’s initial performance, hyperparameter tuning was performed. Hyperparameter tuning **improved the model's AUC score to 0.8425.** The best parameters for the model were the following:
 * learning_rate: 0.1
 * max_depth: 3
@@ -66,7 +66,7 @@ In an attempt to improve upon the Gradient Boosting Classifier’s initial perfo
 * **Seasonality** also played a role in West Nile virus prediction, as week of the year indicators appeared in the top 20 most important features. Weeks 28 and 34 had negative and positive correlations with the presence of West Nile virus respectively.
 * **Precipitation** had a varied effect, but the two most important precipitation features had long lag times (mean precipitation with a lag of 28-35 days, and precipitation with a lag of 27 days). In these two cases, precipitation was negatively correlated with West Nile virus. This may be due to the fact that water sources become more scarce in dry conditions. Culex species tend to disperse more widely under these conditions, as adequate breeding grounds become more scarce. Additionally, contact between birds and mosquitoes tends to increase in dry conditions, as they both rely on the few remaining water sources. This increases the likelihood that mosquitoes will bite a bird that is infected with West Nile virus. On the other hand, mosquito numbers tend to increase in rainy conditions. This may explain why precipitation can have a varied impact on the presence of West Nile virus.
 
-**Recommendations to the City of Chicago and CDPH**
+**Recommendations to the City of Chicago and CDPH**<br/>
 A trained Gradient Boosting Classifier will be provided to the City of Chicago and CDPH, which will provide an improved ability to predict where, and when, West Nile virus will occur. Weather data and mosquito population trends can be monitored, and the Gradient Boosting Classifier can be used to model different scenarios to proactively determine if, and when, different areas are at risk for the presence of West Nile virus. **The following are recommendations** on how the City of Chicago and CDPH can make use of this capability:
 
 1. **Mosquito Spraying** 
